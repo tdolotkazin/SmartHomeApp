@@ -11,9 +11,6 @@
 		24C4C5CC2972F9E60015D2D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4C5CB2972F9E60015D2D4 /* ContentView.swift */; };
 		24C4C5CE2972F9E70015D2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C4C5CD2972F9E70015D2D4 /* Assets.xcassets */; };
 		24C4C5D22972F9E70015D2D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C4C5D12972F9E70015D2D4 /* Preview Assets.xcassets */; };
-		24C4C5D92972FD380015D2D4 /* SensorDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4C5D82972FD380015D2D4 /* SensorDataClient.swift */; };
-		24C4C5DD2972FE2B0015D2D4 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4C5DC2972FE2B0015D2D4 /* SensorData.swift */; };
-		24C4C5DF297300660015D2D4 /* SensorDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4C5DE297300660015D2D4 /* SensorDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +20,6 @@
 		24C4C5CD2972F9E70015D2D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C4C5CF2972F9E70015D2D4 /* SmartHomeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartHomeApp.entitlements; sourceTree = "<group>"; };
 		24C4C5D12972F9E70015D2D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		24C4C5D82972FD380015D2D4 /* SensorDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataClient.swift; sourceTree = "<group>"; };
-		24C4C5DC2972FE2B0015D2D4 /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
-		24C4C5DE297300660015D2D4 /* SensorDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +54,6 @@
 			children = (
 				24C4C5C92972F9E60015D2D4 /* SmartHomeAppApp.swift */,
 				24C4C5CB2972F9E60015D2D4 /* ContentView.swift */,
-				24C4C5D82972FD380015D2D4 /* SensorDataClient.swift */,
-				24C4C5DE297300660015D2D4 /* SensorDataProvider.swift */,
-				24C4C5DC2972FE2B0015D2D4 /* SensorData.swift */,
 				24C4C5CD2972F9E70015D2D4 /* Assets.xcassets */,
 				24C4C5CF2972F9E70015D2D4 /* SmartHomeApp.entitlements */,
 				24C4C5D02972F9E70015D2D4 /* Preview Content */,
@@ -149,10 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C4C5CC2972F9E60015D2D4 /* ContentView.swift in Sources */,
-				24C4C5DF297300660015D2D4 /* SensorDataProvider.swift in Sources */,
-				24C4C5D92972FD380015D2D4 /* SensorDataClient.swift in Sources */,
 				24C4C5CA2972F9E60015D2D4 /* SmartHomeAppApp.swift in Sources */,
-				24C4C5DD2972FE2B0015D2D4 /* SensorData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
