@@ -1,17 +1,12 @@
-//
-//  SmartHomeAppApp.swift
-//  SmartHomeApp
-//
-//  Created by tmdolotkazin on 14.01.2023.
-//
-
 import SwiftUI
 
 @main
 struct SmartHomeAppApp: App {
+    @StateObject var sensorDataProvider = SensorDataProvider()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(sensorDataProvider)
         }
     }
 }
