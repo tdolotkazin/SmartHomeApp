@@ -2,7 +2,7 @@ import Combine
 
 final class SensorDataProvider: ObservableObject {
 
-    @Published var latestData: SensorData?
+    @MainActor @Published var latestData: SensorData?
     let client: SensorDataClient
 
     init(client: SensorDataClient = SensorDataClient()) {
@@ -11,7 +11,9 @@ final class SensorDataProvider: ObservableObject {
 
     func fetchLatestData() async throws {
         let latestData = try await client.latestData
-        self.latestData = latestData
-    }
 
+        await MainActor.run(body: {
+            self.latestData = latestData
+        })
+    }
 }

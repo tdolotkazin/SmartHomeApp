@@ -7,12 +7,24 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text("Temperature:")
-            Text("\(provider.latestData?.temperature ?? 0)")
-            Text("Humidity:")
-            Text("\(provider.latestData?.humidity ?? 0)")
-            Text("Last updated at:")
-            Text("\(provider.latestData?.time ?? .distantPast)")
+            if isLoading {
+                ProgressView()
+            } else {
+                Text("Temperature:")
+                Text("\(provider.latestData?.temperature ?? 0)")
+                Text("Humidity:")
+                Text("\(provider.latestData?.humidity ?? 0)")
+                Text("Last updated at:")
+                Text("\(provider.latestData?.time ?? .distantPast)")
+            }
+            
+            Button {
+                Task {
+                    await fetchSensorData()
+                }
+            } label: {
+                Text("Refresh")
+            }
         }
         .padding()
         .task {
