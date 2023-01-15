@@ -3,6 +3,7 @@ import Combine
 final class SensorDataProvider: ObservableObject {
 
     @MainActor @Published var latestData: SensorData?
+    @MainActor @Published var allData: [SensorData] = []
     let client: SensorDataClient
 
     init(client: SensorDataClient = SensorDataClient()) {
@@ -14,6 +15,14 @@ final class SensorDataProvider: ObservableObject {
 
         await MainActor.run(body: {
             self.latestData = latestData
+        })
+    }
+
+    func fetchAllData() async throws {
+        let allData = try await client.allSensorData
+
+        await MainActor.run(body: {
+            self.allData = allData
         })
     }
 }

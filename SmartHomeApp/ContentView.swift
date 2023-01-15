@@ -6,33 +6,29 @@ struct ContentView: View {
     @State var isLoading = false
 
     var body: some View {
-        VStack {
-            if isLoading {
-                ProgressView()
-            } else {
-                Text("Temperature:")
-                Text("\(provider.latestData?.temperature ?? 0)")
-                Text("Humidity:")
-                Text("\(provider.latestData?.humidity ?? 0)")
-                Text("Last updated at:")
-                Text("\(provider.latestData?.time ?? .distantPast)")
-            }
-            
-            Button {
-                Task {
-                    await fetchSensorData()
+        TabView {
+            LatestDataView()
+                .tabItem {
+                    Label("Latest", systemImage: "thermometer.sun.fill")
                 }
-            } label: {
-                Text("Refresh")
-            }
-        }
-        .padding()
-        .task {
-            await fetchSensorData()
+            AllDataView()
+                .tabItem {
+                    Label("All", systemImage: "chart.xyaxis.line")
+                }
         }
     }
 
     func fetchSensorData() async {
+        isLoading = true
+        do {
+            try await provider.fetchLatestData()
+        } catch {
+            print(error)
+        }
+        isLoading = false
+    }
+
+    func fetchAllData() async {
         isLoading = true
         do {
             try await provider.fetchLatestData()

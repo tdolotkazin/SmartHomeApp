@@ -10,6 +10,9 @@
 		24BC5D7729746F6800EDA02E /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC5D7629746F6800EDA02E /* SensorData.swift */; };
 		24BC5D7929746F6D00EDA02E /* SensorDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC5D7829746F6D00EDA02E /* SensorDataClient.swift */; };
 		24BC5D7B29746F7400EDA02E /* SensorDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC5D7A29746F7400EDA02E /* SensorDataProvider.swift */; };
+		24BC5D7D2974709D00EDA02E /* AllDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC5D7C2974709D00EDA02E /* AllDataView.swift */; };
+		24BC5D7F2974721B00EDA02E /* LatestDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC5D7E2974721B00EDA02E /* LatestDataView.swift */; };
+		24BC5D812974828300EDA02E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC5D802974828300EDA02E /* DateFormatter.swift */; };
 		24C4C5CA2972F9E60015D2D4 /* SmartHomeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4C5C92972F9E60015D2D4 /* SmartHomeAppApp.swift */; };
 		24C4C5CC2972F9E60015D2D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C4C5CB2972F9E60015D2D4 /* ContentView.swift */; };
 		24C4C5CE2972F9E70015D2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C4C5CD2972F9E70015D2D4 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 		24BC5D7629746F6800EDA02E /* SensorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
 		24BC5D7829746F6D00EDA02E /* SensorDataClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataClient.swift; sourceTree = "<group>"; };
 		24BC5D7A29746F7400EDA02E /* SensorDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataProvider.swift; sourceTree = "<group>"; };
+		24BC5D7C2974709D00EDA02E /* AllDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataView.swift; sourceTree = "<group>"; };
+		24BC5D7E2974721B00EDA02E /* LatestDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestDataView.swift; sourceTree = "<group>"; };
+		24BC5D802974828300EDA02E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		24C4C5C62972F9E60015D2D4 /* SmartHomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C4C5C92972F9E60015D2D4 /* SmartHomeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeAppApp.swift; sourceTree = "<group>"; };
 		24C4C5CB2972F9E60015D2D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 			children = (
 				24C4C5C92972F9E60015D2D4 /* SmartHomeAppApp.swift */,
 				24C4C5CB2972F9E60015D2D4 /* ContentView.swift */,
+				24BC5D7C2974709D00EDA02E /* AllDataView.swift */,
+				24BC5D802974828300EDA02E /* DateFormatter.swift */,
+				24BC5D7E2974721B00EDA02E /* LatestDataView.swift */,
 				24BC5D7829746F6D00EDA02E /* SensorDataClient.swift */,
 				24BC5D7A29746F7400EDA02E /* SensorDataProvider.swift */,
 				24BC5D7629746F6800EDA02E /* SensorData.swift */,
@@ -148,10 +157,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BC5D812974828300EDA02E /* DateFormatter.swift in Sources */,
+				24BC5D7F2974721B00EDA02E /* LatestDataView.swift in Sources */,
 				24BC5D7929746F6D00EDA02E /* SensorDataClient.swift in Sources */,
 				24BC5D7B29746F7400EDA02E /* SensorDataProvider.swift in Sources */,
 				24C4C5CC2972F9E60015D2D4 /* ContentView.swift in Sources */,
 				24C4C5CA2972F9E60015D2D4 /* SmartHomeAppApp.swift in Sources */,
+				24BC5D7D2974709D00EDA02E /* AllDataView.swift in Sources */,
 				24BC5D7729746F6800EDA02E /* SensorData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
