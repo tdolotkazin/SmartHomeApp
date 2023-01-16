@@ -18,8 +18,8 @@ final class SensorDataProvider: ObservableObject {
         })
     }
 
-    func fetchAllData() async throws {
-        let allData = try await client.allSensorData
+    func fetchAllData(days: Int) async throws {
+        let allData = try await client.allSensorData(days: days)
 
         await MainActor.run(body: {
             self.allData = allData

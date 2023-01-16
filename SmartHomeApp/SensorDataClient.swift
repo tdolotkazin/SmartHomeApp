@@ -27,7 +27,9 @@ final class SensorDataClient {
     }()
 
     private let apiURL = URL(string: "http://95.163.234.191:8000/latestData")!
-    private let allDataURL = URL(string: "http://95.163.234.191:8000/allSensors?days=5")!
+    private func allDataURL(days: Int) -> URL {
+        URL(string: "http://95.163.234.191:8000/allSensors?days=\(days)")!
+    }
 
     private let urlSession = URLSession(configuration: .default)
 
@@ -39,11 +41,9 @@ final class SensorDataClient {
         }
     }
 
-    var allSensorData: [SensorData] {
-        get async throws {
-            let data = try await urlSession.data(for: URLRequest(url: allDataURL)).0
-            let decodedData: [SensorData] = try decoder.decode([SensorData].self, from: data)
-            return decodedData
-        }
+    func allSensorData(days: Int) async throws -> [SensorData] {        
+        let data = try await urlSession.data(for: URLRequest(url: allDataURL(days: days))).0
+        let decodedData: [SensorData] = try decoder.decode([SensorData].self, from: data)
+        return decodedData
     }
 }
