@@ -24,6 +24,7 @@ struct AllDataView: View {
                     }
                 }
             })
+            .chartYScale(domain: .automatic(includesZero: false))
             Picker(
                 "Days",
                 selection: $daysFetched
