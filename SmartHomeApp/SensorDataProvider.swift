@@ -2,7 +2,7 @@ import Combine
 
 final class SensorDataProvider: ObservableObject {
 
-    @MainActor @Published var latestData: SensorData?
+    @MainActor @Published var latestData: LatestData?
     @MainActor @Published var allData: [SensorData] = []
     let client: SensorDataClient
 

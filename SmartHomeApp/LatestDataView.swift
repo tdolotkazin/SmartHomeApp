@@ -14,8 +14,22 @@ struct LatestDataView: View {
                 Text("\(provider.latestData?.temperature ?? 0)")
                 Text("Humidity:")
                 Text("\(provider.latestData?.humidity ?? 0)")
-                Text("Last updated at:")
-                Text("\(DateFormatter.allDataDateFormatter.string(from: (provider.latestData?.time ?? .distantPast)))")
+                Text("Last updated at: \(DateFormatter.allDataDateFormatter.string(from: (provider.latestData?.baseLastUpdatedTime ?? .distantPast)))")
+                HStack {
+                    Text("Boiler is running:")
+                    if (provider.latestData?.isBoilerRunning) == true {
+                        Circle()
+                            .fill(.green)
+                            .frame(width: 16, height: 16)
+                    } else {
+                        Circle()
+                            .fill(.red)
+                            .frame(width: 16, height: 16)
+                    }
+                }
+                Text("Water temperature:")
+                Text("\(provider.latestData?.waterTemperature ?? 0)")
+                Text("Boiler last updated at: \(DateFormatter.allDataDateFormatter.string(from: (provider.latestData?.boilerLastUpdatedTime ?? .distantPast)))")
             }
 
             Button {

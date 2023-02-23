@@ -33,10 +33,10 @@ final class SensorDataClient {
 
     private let urlSession = URLSession(configuration: .default)
 
-    var latestData: SensorData {
+    var latestData: LatestData {
         get async throws {
             let data = try await urlSession.data(for: URLRequest(url: apiURL)).0
-            let decodedData: SensorData = try decoder.decode(SensorData.self, from: data)
+            let decodedData: LatestData = try decoder.decode(LatestData.self, from: data)
             return decodedData
         }
     }
