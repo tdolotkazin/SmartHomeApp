@@ -2,8 +2,8 @@ import Foundation
 
 struct SensorData: Decodable, Identifiable {
 
-    var id: Date {
-        return time
+    var id: String {
+        return time.ISO8601Format()
     }
     var temperature: Double
     var humidity: Double
@@ -16,11 +16,7 @@ struct SensorData: Decodable, Identifiable {
     }
 }
 
-struct LatestData: Decodable, Identifiable {
-    var id: Date {
-        return baseLastUpdatedTime
-    }
-
+struct LatestData: Decodable {
     var temperature: Double
     var humidity: Double
     var baseLastUpdatedTime: Date
@@ -37,4 +33,36 @@ struct LatestData: Decodable, Identifiable {
         case waterTemperature = "waterTemp"
         case boilerLastUpdatedTime = "boilerLastUpdatedTime"
     }
+}
+
+struct BoilerData: Decodable, Identifiable {
+
+    var id: String {
+        return time.ISO8601Format()
+    }
+    var waterTemperature: Double
+    var isBoilerRunning: Bool
+    var time: Date
+
+    enum CodingKeys: String, CodingKey {
+        case waterTemperature = "waterTemp"
+        case isBoilerRunning = "isRunning"
+        case time = "time"
+    }
+}
+
+struct BoilerRunData: Identifiable {
+    var id: Date {
+        return startTime
+    }
+    var startTime: Date
+    var endTime: Date
+}
+
+struct BoilerAverageRunData: Identifiable {
+    var id: Date {
+        return time
+    }
+    var time: Date
+    var averageRunning: Double
 }

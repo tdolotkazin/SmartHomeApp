@@ -25,10 +25,19 @@ final class SensorDataClient {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         return formatter
     }()
+    private lazy var queryDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
 
     private let apiURL = URL(string: "http://95.163.234.191:8000/latestData")!
-    private func allDataURL(days: Int) -> URL {
-        URL(string: "http://95.163.234.191:8000/allSensors?days=\(days)")!
+    private func allDataURL(from: String, to: String) -> URL {
+        URL(string: "http://95.163.234.191:8000/allSensors?from=\(from)&to=\(to)")!
+    }
+
+    private func allBoilerDataURL(from: String, to: String) -> URL {
+        URL(string: "http://95.163.234.191:8000/allBoiler?from=\(from)&to=\(to)")!
     }
 
     private let urlSession = URLSession(configuration: .default)
@@ -41,9 +50,19 @@ final class SensorDataClient {
         }
     }
 
-    func allSensorData(days: Int) async throws -> [SensorData] {        
-        let data = try await urlSession.data(for: URLRequest(url: allDataURL(days: days))).0
+    func allSensorData(from: Date, to: Date) async throws -> [SensorData] {
+        let fromString = queryDateFormatter.string(from: from)
+        let toString = queryDateFormatter.string(from: to)
+        let data = try await urlSession.data(for: URLRequest(url: allDataURL(from: fromString, to: toString))).0
         let decodedData: [SensorData] = try decoder.decode([SensorData].self, from: data)
+        return decodedData
+    }
+
+    func allBoilerData(from: Date, to: Date) async throws -> [BoilerData] {
+        let fromString = queryDateFormatter.string(from: from)
+        let toString = queryDateFormatter.string(from: to)
+        let data = try await urlSession.data(for: URLRequest(url: allBoilerDataURL(from: fromString, to: toString))).0
+        let decodedData: [BoilerData] = try decoder.decode([BoilerData].self, from: data)
         return decodedData
     }
 }
