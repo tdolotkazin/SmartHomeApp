@@ -89,11 +89,15 @@ struct AllDataView: View {
                     xScaleFactor = xScaleFactor * 2
                 } label: {
                     Image(systemName: "plus.magnifyingglass")
+                        .resizable()
+                        .frame(width: 32, height: 32)
                 }
                 Button {
                     xScaleFactor = xScaleFactor / 2
                 } label: {
                     Image(systemName: "minus.magnifyingglass")
+                        .resizable()
+                        .frame(width: 32, height: 32)
                 }
             }
         }
