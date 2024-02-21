@@ -58,7 +58,12 @@ final class SensorDataProvider: ObservableObject {
     }
 
     // TODO: - Calculate average boiler running time
-//    func calculateAverageBoilerRunData(boilerData: [BoilerRunData]) -> [BoilerAverageRunData] {}
+//    func calculateAverageBoilerRunData(boilerData: [BoilerRunData]) -> [BoilerAverageRunData] {
+//        var currentTime: Date = .distantPast
+//        var results = [BoilerAverageRunData]()
+//
+//        return results
+//    }
 }
 
 extension Date {

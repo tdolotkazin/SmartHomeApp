@@ -64,5 +64,5 @@ struct BoilerAverageRunData: Identifiable {
         return time
     }
     var time: Date
-    var averageRunning: Double
+    var averageRunning: TimeInterval
 }

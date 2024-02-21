@@ -84,6 +84,11 @@ struct AllDataView: View {
                     await fetchAllData(days: newValue)
                 }
             }
+            Button("Refresh") {
+                Task {
+                    await fetchAllData(days: daysFetched)
+                }
+            }
             HStack {
                 Button {
                     xScaleFactor = xScaleFactor * 2
@@ -120,3 +125,4 @@ struct AllDataView_Previews: PreviewProvider {
             .environmentObject(SensorDataProvider())
     }
 }
+
